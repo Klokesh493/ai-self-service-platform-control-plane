@@ -1,0 +1,103 @@
+{
+  "blockers": [
+    "tenant CPU quota exceeded"
+  ],
+  "citations": [
+    "request",
+    "catalog",
+    "usage"
+  ],
+  "decision": "provision_hold",
+  "evidence": {
+    "catalog": {
+      "data": {
+        "allowed_ports": [
+          8080
+        ],
+        "approved_registries": [
+          "registry.example.com"
+        ],
+        "cpu_quota_millis": 699,
+        "max_service_replicas": 4,
+        "memory_quota_mib": 2048,
+        "namespace": "payments",
+        "owner": "payments",
+        "replica_quota": 10
+      },
+      "id": "catalog",
+      "sha256": "614bb82b2d435a5c521c4a62875997ace1c146d3ffcb0399a1da3d20fa893741"
+    },
+    "request": {
+      "data": {
+        "cpu_millis": 250,
+        "image": "registry.example.com/checkout@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "memory_mib": 256,
+        "name": "checkout",
+        "namespace": "payments",
+        "owner": "payments",
+        "port": 8080,
+        "replicas": 2,
+        "template": "api"
+      },
+      "id": "request",
+      "sha256": "2afaf7fd257c0d094bf97dad43aa7665ca2a719cc195752594690417735e6f46"
+    },
+    "usage": {
+      "data": [
+        {
+          "cpu_millis": 250,
+          "memory_mib": 256,
+          "name": "checkout",
+          "replicas": 2
+        },
+        {
+          "cpu_millis": 100,
+          "memory_mib": 128,
+          "name": "worker",
+          "replicas": 2
+        }
+      ],
+      "id": "usage",
+      "sha256": "10460eaaa414ae0046b53802b574c280f6ebc8874d216143bafcf65aa4a803ea"
+    }
+  },
+  "missing": [],
+  "model": "qwen2.5:0.5b",
+  "planner": "ollama",
+  "projected_usage": {
+    "cpu_millis": 700,
+    "memory_mib": 768,
+    "replicas": 4
+  },
+  "ready": false,
+  "reason": "Correct the request or refresh capacity evidence before exporting.",
+  "request": {
+    "cpu_millis": 250,
+    "image": "registry.example.com/checkout@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "memory_mib": 256,
+    "name": "checkout",
+    "namespace": "payments",
+    "owner": "payments",
+    "port": 8080,
+    "replicas": 2,
+    "template": "api"
+  },
+  "stop": "evidence_complete",
+  "trace": [
+    {
+      "event": "observed",
+      "source": "request",
+      "step": 1
+    },
+    {
+      "event": "observed",
+      "source": "usage",
+      "step": 2
+    },
+    {
+      "event": "observed",
+      "source": "catalog",
+      "step": 3
+    }
+  ]
+}

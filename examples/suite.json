@@ -1,0 +1,32 @@
+[
+  {
+    "name": "healthy",
+    "input": "healthy.json",
+    "expected": "provision_ready"
+  },
+  {
+    "name": "cpu-quota",
+    "input": "cpu-quota.json",
+    "expected": "provision_hold"
+  },
+  {
+    "name": "wrong-owner",
+    "input": "wrong-owner.json",
+    "expected": "provision_hold"
+  },
+  {
+    "name": "unapproved-registry",
+    "input": "unapproved-registry.json",
+    "expected": "provision_hold"
+  },
+  {
+    "name": "blocked-port",
+    "input": "blocked-port.json",
+    "expected": "provision_hold"
+  },
+  {
+    "name": "replica-cap",
+    "input": "replica-cap.json",
+    "expected": "provision_hold"
+  }
+]

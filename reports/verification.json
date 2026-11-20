@@ -1,0 +1,23 @@
+{
+  "tests": 28,
+  "replay_scenarios": 6,
+  "model_runs": 2,
+  "http_demo": {
+    "decision": "provision_ready",
+    "state": "exported",
+    "mode": "replay",
+    "files": [
+      "deployment.json",
+      "service.json"
+    ],
+    "hec": {
+      "accepted": 3,
+      "attempted": 3,
+      "pending": 0
+    }
+  },
+  "promtool_rules": "passed",
+  "config_parse": "passed",
+  "live_prometheus_scrape": "passed",
+  "source_sha256": "92b476ad39d55c96340db4044082daa66c156673d3fc3b964c584e5271074aa8"
+}

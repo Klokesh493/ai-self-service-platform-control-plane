@@ -1,0 +1,41 @@
+{
+  "request": {
+    "name": "checkout",
+    "namespace": "payments",
+    "owner": "other",
+    "template": "api",
+    "replicas": 2,
+    "cpu_millis": 250,
+    "memory_mib": 256,
+    "image": "registry.example.com/checkout@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "port": 8080
+  },
+  "catalog": {
+    "namespace": "payments",
+    "owner": "payments",
+    "approved_registries": [
+      "registry.example.com"
+    ],
+    "cpu_quota_millis": 2000,
+    "memory_quota_mib": 2048,
+    "replica_quota": 10,
+    "max_service_replicas": 4,
+    "allowed_ports": [
+      8080
+    ]
+  },
+  "usage": [
+    {
+      "name": "checkout",
+      "replicas": 2,
+      "cpu_millis": 250,
+      "memory_mib": 256
+    },
+    {
+      "name": "worker",
+      "replicas": 2,
+      "cpu_millis": 100,
+      "memory_mib": 128
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "healthy",
+    "expected": "provision_ready",
+    "decision": "provision_ready",
+    "passed": true
+  },
+  {
+    "name": "cpu-quota",
+    "expected": "provision_hold",
+    "decision": "provision_hold",
+    "passed": true
+  },
+  {
+    "name": "wrong-owner",
+    "expected": "provision_hold",
+    "decision": "provision_hold",
+    "passed": true
+  },
+  {
+    "name": "unapproved-registry",
+    "expected": "provision_hold",
+    "decision": "provision_hold",
+    "passed": true
+  },
+  {
+    "name": "blocked-port",
+    "expected": "provision_hold",
+    "decision": "provision_hold",
+    "passed": true
+  },
+  {
+    "name": "replica-cap",
+    "expected": "provision_hold",
+    "decision": "provision_hold",
+    "passed": true
+  }
+]
